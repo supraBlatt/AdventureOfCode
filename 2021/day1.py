@@ -1,5 +1,4 @@
 in_path = 'day1-input.txt'
-infile = open(in_path)
 
 ''' solution 1 using numpy '''
 import numpy as np
@@ -15,7 +14,8 @@ def p2(depths, n):
     return p1(np.convolve(depths, np.ones(n,dtype=int), 'valid'))
 
 # preprocess input. loading the whole file?? smh
-inputs = np.array(infile.read().splitlines()).astype(int)
+with open(in_path) as infile:
+    inputs = np.array(infile.read().splitlines()).astype(int)
 
 # parts. All answers are off by 1 smhh
 print("part 1:", p1(inputs))
