@@ -11,7 +11,7 @@ def p1(depths):
 def p2(depths, n):
 
     # convolution to generate the sliding windows
-    return p1(np.convolve(depths, np.ones(n,dtype=int), 'valid'))
+    return p1(np.convolve(depths, np.ones(n), 'valid'))
 
 # preprocess input. loading the whole file?? smh
 with open(in_path) as infile:
@@ -20,5 +20,4 @@ with open(in_path) as infile:
 # parts. All answers are off by 1 smhh
 print("part 1:", p1(inputs))
 print("part 2:", p2(inputs, 3))
-infile.close()
 
