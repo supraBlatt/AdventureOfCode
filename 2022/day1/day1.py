@@ -16,10 +16,10 @@ def parse() -> list[int]:
             overall.append(calorie_sum)
     return overall
 
-def p1(input) -> int: 
+def p1(input: list[int]) -> int: 
     return max(input)
 
-def p2(input) -> int: 
+def p2(input: list[int]) -> int: 
     return sum(sorted(input, reverse=True)[:3])
 
 # --------------------------------------------------------------
@@ -43,7 +43,7 @@ def lazy_p1() -> int:
     # return the maximum element of the blocks
     return max(lazy_parse()) 
 
-def lazy_p2(n) -> int:
+def alt_p2(n: int) -> int:
     # returns the maximum 3 elements of the blocks
     # lmao i have 0 idea how this works.
     # i don't even think it's lazy. it takes an iterable and spits out a list.
@@ -56,4 +56,4 @@ calories = parse()
 print(f"naive part 1: {p1(calories)}")
 print(f"naive part 2: {p2(calories)}")
 print(f"lazy ass part 1: {lazy_p1()}")
-print(f"wannabe lazy ass part2: {lazy_p2(3)}")
+print(f"wannabe lazy ass part2: {alt_p2(3)}")
